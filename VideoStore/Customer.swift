@@ -27,6 +27,22 @@ public class Customer {
         return result
     }
 
+    public func htmlStatement() -> String {
+
+        var result:String = "<h1>Rental Record for <em>\(name)</em></h1>"
+        result += "<ul>"
+        for item in rentals {
+            result += "<li>\(item.movie.title) <em>\(item.getCharge())</em></li>"
+        }
+        result += "</ul>"
+
+        // add footer lines
+        result += "<p>Amount owed is <em>\(getTotalCharge())</em></p>"
+        result += "<p>You earned <em>\(getTotalFrequentRenterPoints())</em> frequent renter points</p>"
+
+        return result
+    }
+
     private func getTotalCharge() -> Double {
         var result:Double = 0
         for rental in rentals {

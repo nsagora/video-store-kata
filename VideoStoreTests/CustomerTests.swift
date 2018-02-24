@@ -91,4 +91,22 @@ class CustomerTests: XCTestCase {
             customer.statement()
         )
     }
+
+    public func testMultipleRegularHtmlStatement() {
+        customer.add(rental:Rental(movie: regular1, daysRented: 1));
+        customer.add(rental:Rental(movie: regular2, daysRented: 2));
+        customer.add(rental:Rental(movie: regular3, daysRented: 3));
+
+        XCTAssertEqual(
+            "<h1>Rental Record for <em>Customer Name</em></h1>" +
+            "<ul>" +
+                "<li>Regular 1 <em>2.0</em></li>" +
+                "<li>Regular 2 <em>2.0</em></li>" +
+                "<li>Regular 3 <em>3.5</em></li>" +
+            "</ul>" +
+            "<p>Amount owed is <em>7.5</em></p>" +
+            "<p>You earned <em>3</em> frequent renter points</p>",
+            customer.htmlStatement()
+        )
+    }
 }
