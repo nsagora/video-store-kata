@@ -32,4 +32,11 @@ public class Movie {
 
         return result
     }
+
+    public func getFrequentRenterPoints(daysRented:Int) -> Int {
+        if (priceCode == .newRelease && daysRented > 1) {
+            return 2
+        }
+        return 1
+    }
 }
