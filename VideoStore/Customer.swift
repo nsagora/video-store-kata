@@ -21,8 +21,6 @@ public class Customer {
         
         for item in rentals {
             
-            let thisAmount = item.getCharge()
-            
             // add frequent renter points
             frequentRenterPoints += 1
             // add bonus for a two day new release rental
@@ -30,8 +28,8 @@ public class Customer {
                 frequentRenterPoints += 1
             }
             // show figures for this rental
-            result += "\t\(item.movie.title)\t\(thisAmount)\n"
-            totalAmount += thisAmount
+            result += "\t\(item.movie.title)\t\(item.getCharge())\n"
+            totalAmount += item.getCharge()
         }
         
         // add footer lines
