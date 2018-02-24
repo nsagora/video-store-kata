@@ -3,6 +3,17 @@ import Foundation
 public protocol Price {
     var priceCode: PriceCode { get }
     func getCharge(daysRented: Int) -> Double
+    func getFrequentRenterPoints(daysRented:Int) -> Int
+}
+
+extension Price {
+    
+    public func getFrequentRenterPoints(daysRented:Int) -> Int {
+        if (priceCode == .newRelease && daysRented > 1) {
+            return 2
+        }
+        return 1
+    }
 }
 
 public class ChildrenPrice: Price {
