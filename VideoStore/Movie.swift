@@ -7,13 +7,7 @@ public class Movie {
     private var price:Price = RegularPrice()
     public var priceCode:PriceCode {
         get { return price.priceCode }
-        set {
-            switch newValue {
-            case .childern: price = ChildrenPrice()
-            case .regular: price = RegularPrice()
-            case .newRelease: price = NewReleasePrice()
-            }
-        }
+        set { price = newValue.MakePrice() }
     }
 
     init(title:String, priceCode:PriceCode) {
