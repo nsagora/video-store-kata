@@ -20,13 +20,9 @@ public class Customer {
         var result:String = "Rental Record for \(name)\n"
         
         for item in rentals {
-            
-            // add frequent renter points
-            frequentRenterPoints += 1
-            // add bonus for a two day new release rental
-            if (item.movie.priceCode == .newRelease && item.daysRented > 1) {
-                frequentRenterPoints += 1
-            }
+
+            frequentRenterPoints += renterPoints(forRental: item)
+
             // show figures for this rental
             result += "\t\(item.movie.title)\t\(item.getCharge())\n"
             totalAmount += item.getCharge()
@@ -37,5 +33,12 @@ public class Customer {
         result += "You earned \(frequentRenterPoints) frequent renter points\n"
         
         return result
+    }
+
+    private func renterPoints(forRental rental:Rental) -> Int {
+        if (rental.movie.priceCode == .newRelease && rental.daysRented > 1) {
+            return 2
+        }
+        return 1
     }
 }
