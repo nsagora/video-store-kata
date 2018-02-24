@@ -3,7 +3,12 @@ import Foundation
 public class Movie {
 
     public private(set) var title:String
-    public var priceCode:PriceCode
+
+    private var price:PriceCode = .regular
+    public var priceCode:PriceCode {
+        get { return price }
+        set { price = newValue }
+    }
 
     init(title:String, priceCode:PriceCode) {
         self.title = title
