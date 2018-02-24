@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FACF571E2041B79700C92404 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF571D2041B79700C92404 /* Price.swift */; };
 		FAD45BCC203C943A0015E506 /* VideoStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD45BC2203C943A0015E506 /* VideoStore.framework */; };
 		FAD45BD1203C943A0015E506 /* VideoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45BD0203C943A0015E506 /* VideoStoreTests.swift */; };
 		FAD45BD3203C943A0015E506 /* VideoStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD45BC5203C943A0015E506 /* VideoStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FACF571D2041B79700C92404 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		FAD45BC2203C943A0015E506 /* VideoStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideoStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD45BC5203C943A0015E506 /* VideoStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoStore.h; sourceTree = "<group>"; };
 		FAD45BC6203C943A0015E506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		FAD45BC4203C943A0015E506 /* VideoStore */ = {
 			isa = PBXGroup;
 			children = (
+				FACF571D2041B79700C92404 /* Price.swift */,
 				FAD45BDF203C95C60015E506 /* PriceCode.swift */,
 				FAD45BDE203C95C60015E506 /* Movie.swift */,
 				FAD45BE0203C95C60015E506 /* Rental.swift */,
@@ -231,6 +234,7 @@
 				FAD45BE3203C95C60015E506 /* PriceCode.swift in Sources */,
 				FAD45BE2203C95C60015E506 /* Movie.swift in Sources */,
 				FAD45BE4203C95C60015E506 /* Rental.swift in Sources */,
+				FACF571E2041B79700C92404 /* Price.swift in Sources */,
 				FAD45BE5203C95C60015E506 /* Customer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -4,10 +4,16 @@ public class Movie {
 
     public private(set) var title:String
 
-    private var price:PriceCode = .regular
+    private var price:Price = RegularPrice()
     public var priceCode:PriceCode {
-        get { return price }
-        set { price = newValue }
+        get { return price.priceCode }
+        set {
+            switch newValue {
+            case .childern: price = ChildrenPrice()
+            case .regular: price = RegularPrice()
+            case .newRelease: price = NewReleasePrice()
+            }
+        }
     }
 
     init(title:String, priceCode:PriceCode) {
