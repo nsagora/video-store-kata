@@ -9,9 +9,6 @@ public protocol Price {
 extension Price {
     
     public func getFrequentRenterPoints(daysRented:Int) -> Int {
-        if (priceCode == .newRelease && daysRented > 1) {
-            return 2
-        }
         return 1
     }
 }
@@ -45,5 +42,12 @@ public class NewReleasePrice: Price {
 
     public func getCharge(daysRented: Int) -> Double {
         return Double(daysRented) * 3
+    }
+
+    public func getFrequentRenterPoints(daysRented: Int) -> Int {
+        if (daysRented > 1) {
+            return 2
+        }
+        return 1
     }
 }
