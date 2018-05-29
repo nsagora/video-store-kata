@@ -19,37 +19,17 @@ public class Customer {
         var frequentRenterPoints:Int = 0
         var result:String = "Rental Record for \(name)\n"
         
-        for item in rentals {
-            
-            var thisAmount:Double = 0
-            
-            // determine amounts for each line
-            switch (item.movie.priceCode) {
-            case .regular:
-                thisAmount += 2
-                if (item.daysRented > 2) {
-                    thisAmount += Double(item.daysRented - 2) * 1.5
-                }
-                
-            case .newRelease:
-                thisAmount += Double(item.daysRented) * 3
-                
-            case .childrens:
-                thisAmount += 1.5
-                if (item.daysRented > 3) {
-                    thisAmount += Double(item.daysRented - 3) * 1.5
-                }
-            }
-            
+        for rental in rentals {
+
             // add frequent renter points
             frequentRenterPoints += 1
             // add bonus for a two day new release rental
-            if (item.movie.priceCode == .newRelease && item.daysRented > 1) {
+            if (rental.movie.priceCode == .newRelease && rental.daysRented > 1) {
                 frequentRenterPoints += 1
             }
             // show figures for this rental
-            result += "\t\(item.movie.title)\t\(thisAmount)\n"
-            totalAmount += thisAmount
+            result += "\t\(rental.movie.title)\t\(rental.getCharge())\n"
+            totalAmount += rental.getCharge()
         }
         
         // add footer lines
