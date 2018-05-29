@@ -34,7 +34,7 @@ public class Customer {
             case .newRelease:
                 thisAmount += Double(item.daysRented) * 3
                 
-            case .childern:
+            case .childrens:
                 thisAmount += 1.5
                 if (item.daysRented > 3) {
                     thisAmount += Double(item.daysRented - 3) * 1.5
