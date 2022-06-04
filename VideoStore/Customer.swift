@@ -2,32 +2,32 @@ import Foundation
 
 public class Customer {
     
-    public var name:String
-    private var rentals:Array<Rental> = []
+    public var name: String
+    private var rentals: [Rental] = []
     
-    public init(name:String) {
+    public init(name: String) {
         self.name = name
     }
     
-    public func add(rental:Rental) {
+    public func add(rental: Rental) {
         rentals.append(rental)
     }
     
     public func statement() -> String {
         
-        var totalAmount:Double = 0
-        var frequentRenterPoints:Int = 0
-        var result:String = "Rental Record for \(name)\n"
+        var totalAmount: Double = 0
+        var frequentRenterPoints: Int = 0
+        var result: String = "Rental Record for \(name)\n"
         
         for item in rentals {
             
-            var thisAmount:Double = 0
+            var thisAmount: Double = 0
             
             // determine amounts for each line
-            switch (item.movie.priceCode) {
+            switch item.movie.priceCode {
             case .regular:
                 thisAmount += 2
-                if (item.daysRented > 2) {
+                if item.daysRented > 2 {
                     thisAmount += Double(item.daysRented - 2) * 1.5
                 }
                 
@@ -36,7 +36,7 @@ public class Customer {
                 
             case .childern:
                 thisAmount += 1.5
-                if (item.daysRented > 3) {
+                if item.daysRented > 3 {
                     thisAmount += Double(item.daysRented - 3) * 1.5
                 }
             }
@@ -44,7 +44,7 @@ public class Customer {
             // add frequent renter points
             frequentRenterPoints += 1
             // add bonus for a two day new release rental
-            if (item.movie.priceCode == .newRelease && item.daysRented > 1) {
+            if item.movie.priceCode == .newRelease && item.daysRented > 1 {
                 frequentRenterPoints += 1
             }
             // show figures for this rental
