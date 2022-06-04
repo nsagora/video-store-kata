@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FAD45BCC203C943A0015E506 /* VideoStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD45BC2203C943A0015E506 /* VideoStore.framework */; };
-		FAD45BD1203C943A0015E506 /* VideoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45BD0203C943A0015E506 /* VideoStoreTests.swift */; };
 		FAD45BD3203C943A0015E506 /* VideoStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD45BC5203C943A0015E506 /* VideoStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAD45BE2203C95C60015E506 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45BDE203C95C60015E506 /* Movie.swift */; };
 		FAD45BE3203C95C60015E506 /* PriceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45BDF203C95C60015E506 /* PriceCode.swift */; };
@@ -32,7 +31,6 @@
 		FAD45BC5203C943A0015E506 /* VideoStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoStore.h; sourceTree = "<group>"; };
 		FAD45BC6203C943A0015E506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD45BCB203C943A0015E506 /* VideoStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAD45BD0203C943A0015E506 /* VideoStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStoreTests.swift; sourceTree = "<group>"; };
 		FAD45BD2203C943A0015E506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD45BDE203C95C60015E506 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FAD45BDF203C95C60015E506 /* PriceCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCode.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 		FAD45BDD203C946E0015E506 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FAD45BD0203C943A0015E506 /* VideoStoreTests.swift */,
 				FAD45BD2203C943A0015E506 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -135,9 +132,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAD45BD6203C943A0015E506 /* Build configuration list for PBXNativeTarget "VideoStore" */;
 			buildPhases = (
+				FAD45BBF203C943A0015E506 /* Headers */,
 				FAD45BBD203C943A0015E506 /* Sources */,
 				FAD45BBE203C943A0015E506 /* Frameworks */,
-				FAD45BBF203C943A0015E506 /* Headers */,
 				FAD45BC0203C943A0015E506 /* Resources */,
 			);
 			buildRules = (
@@ -174,16 +171,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = NSAgora;
 				TargetAttributes = {
 					FAD45BC1203C943A0015E506 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1330;
 						ProvisioningStyle = Automatic;
 					};
 					FAD45BCA203C943A0015E506 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1330;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -194,6 +192,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FAD45BB8203C943A0015E506;
 			productRefGroup = FAD45BC3203C943A0015E506 /* Products */;
@@ -240,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD45BE7203C95D00015E506 /* CustomerTests.swift in Sources */,
-				FAD45BD1203C943A0015E506 /* VideoStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +267,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -276,8 +275,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -304,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,6 +330,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -336,8 +338,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -358,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -386,7 +390,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -408,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nsagora.video-store";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -423,7 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nsagora.video-store-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -438,7 +442,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nsagora.video-store-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
